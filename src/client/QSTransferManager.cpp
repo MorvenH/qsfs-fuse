@@ -568,7 +568,7 @@ void QSTransferManager::DoSinglePartUpload(
     return;
   }
 
-  shared_ptr<IOStream> stream = make_shared<IOStream>(buf, fileSize);
+  shared_ptr<IOStream> stream = shared_ptr<IOStream>(new IOStream(buf, fileSize));
   handle->AddPendingPart(part);
   ReceivedHandlerSingleUpload receivedHandler(handle, part, stream);
 

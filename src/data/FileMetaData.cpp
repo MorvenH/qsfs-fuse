@@ -134,12 +134,9 @@ struct stat FileMetaData::ToStat() const {
   st.st_size = m_fileSize;
   st.st_blocks = QS::Configure::Default::GetBlocks(st.st_size);
   st.st_blksize = QS::Configure::Default::GetBlockSize();
-  st.st_atim.tv_sec = m_atime;
-  st.st_mtim.tv_sec = m_mtime;
-  st.st_ctim.tv_sec = m_ctime;
-  st.st_atim.tv_nsec = 0;
-  st.st_mtim.tv_nsec = 0;
-  st.st_ctim.tv_nsec = 0;
+  st.st_atime = m_atime;
+  st.st_mtime = m_mtime;
+  st.st_ctime = m_ctime;
   st.st_uid = m_uid;
   st.st_gid = m_gid;
   st.st_mode = GetFileTypeAndMode();

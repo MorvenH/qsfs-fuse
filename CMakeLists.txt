@@ -49,6 +49,13 @@ set (PACKAGE_BUGREPORT     "https://github.com/jimhuaang/qsfs-boost/issues")
 set (PACKAGE_DESCRIPTION   "A FUSE based filesystem allows you to mount a qingstor bucket in Linux.")
 set (PACKAGE_URL           "https://github.com/jimhuaang/qsfs-boost")
 
+if (APPLE)
+set (LIB_FUSE_NAME  "osxfuse")
+else ()
+set (LIB_FUSE_NAME  "fuse")
+endif()
+
+
 string (TOUPPER "${PACKAGE_NAME}"       PACKAGE_PREFIX)
 
 project (${PACKAGE_NAME})

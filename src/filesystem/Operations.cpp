@@ -157,9 +157,9 @@ void FillStat(const struct stat& source, struct stat* target) {
   target->st_size = source.st_size;
   target->st_blocks = source.st_blocks;
   target->st_blksize = source.st_blksize;
-  target->st_atim = source.st_atim;
-  target->st_mtim = source.st_mtim;
-  target->st_ctim = source.st_ctim;
+  target->st_atime = source.st_atime;
+  target->st_mtime = source.st_mtime;
+  target->st_ctime = source.st_ctime;
   target->st_uid = source.st_uid;
   target->st_gid = source.st_gid;
   target->st_mode = source.st_mode;
